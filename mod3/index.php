@@ -35,18 +35,7 @@
  * @author 	Kasper Skårhøj <kasperYYYY@typo3.com>
  * @author 	Stanislas Rolland <typo3(arobas)sjbr.ca>
  */
-error_reporting(E_ALL & ~(E_STRICT | E_NOTICE | E_DEPRECATED));
-unset($MCONF);
-require __DIR__ . '/conf.php';
-require $BACK_PATH . 'init.php';
-$LANG->includeLLFile('EXT:rtehtmlarea/mod3/locallang.xlf');
-$LANG->includeLLFile('EXT:rtehtmlarea/htmlarea/locallang_dialogs.xlf');
-/*
- * @deprecated since 6.0, the classname tx_rtehtmlarea_SC_browse_links and this file is obsolete
- * and will be removed with 6.2. The class was renamed and is now located at:
- * typo3/sysext/rtehtmlarea/Classes/Controller/BrowseLinksController.php
- */
-require_once \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('rtehtmlarea') . 'Classes/Controller/BrowseLinksController.php';
+
 // Make instance:
 $SOBE = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Rtehtmlarea\\Controller\\BrowseLinksController');
 $SOBE->main();
