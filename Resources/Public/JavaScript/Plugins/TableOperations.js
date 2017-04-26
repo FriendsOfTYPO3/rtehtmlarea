@@ -1690,13 +1690,13 @@ define([
 				$('<div />', {'class': 'form-group'}).append(
 					$('<label />', {'class': 'col-sm-2'}).html(this.getHelpTip('caption', 'Caption:')),
 					$('<div />', {'class': 'col-sm-10'}).append(
-						$('<input />', {name: 'f_caption', 'class': 'form-control', value: (caption !== null ? caption.innerHTML : '')})
+						$('<input />', {name: 'f_caption', 'class': 'form-control', value: (caption ? caption.innerHTML : '')})
 					)
 				),
 				$('<div />', {'class': 'form-group'}).append(
 					$('<label />', {'class': 'col-sm-2'}).html(this.getHelpTip('summary', 'Summary:')),
 					$('<div />', {'class': 'col-sm-10'}).append(
-						$('<input />', {name: 'f_summary', 'class': 'form-control', value: (typeof table === 'object' && table !== null ? table.summary : '')})
+						$('<input />', {name: 'f_summary', 'class': 'form-control', value: (typeof table === 'object' && table ? table.summary : '')})
 					)
 				)
 			);
