@@ -685,7 +685,7 @@ class RichTextElement extends AbstractFormElement
                 : ((int)$this->processedRteConfiguration['rteMaxHeight'] ?: '2000')) . '";';
         $jsArray[] = 'RTEarea[editornumber].fullScreen = ' . ($this->isInFullScreenMode() ? 'true;' : 'false;');
         $jsArray[] = 'RTEarea[editornumber].showStatusBar = ' . (trim($this->processedRteConfiguration['showStatusBar']) ? 'true;' : 'false;');
-        $jsArray[] = 'RTEarea[editornumber].enableWordClean = ' . (trim($this->processedRteConfiguration['enableWordClean']) ? 'true;' : 'false;');
+        $jsArray[] = 'RTEarea[editornumber].enableWordClean = ' . (!empty($this->processedRteConfiguration['enableWordClean']) ? 'true;' : 'false;');
         $jsArray[] = 'RTEarea[editornumber].htmlRemoveComments = ' . (trim($this->processedRteConfiguration['removeComments']) ? 'true;' : 'false;');
         $jsArray[] = 'RTEarea[editornumber].disableEnterParagraphs = ' . (trim($this->processedRteConfiguration['disableEnterParagraphs']) ? 'true;' : 'false;');
         $jsArray[] = 'RTEarea[editornumber].disableObjectResizing = ' . (trim($this->processedRteConfiguration['disableObjectResizing']) ? 'true;' : 'false;');
