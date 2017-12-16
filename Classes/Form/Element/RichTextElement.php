@@ -330,16 +330,12 @@ class RichTextElement extends AbstractFormElement
             $result[] =     '</textarea>';
             $result[] = '</div>';
         } else {
-            $legacyWizards = $this->renderWizards();
-            $legacyFieldControlHtml = implode(LF, $legacyWizards['fieldControl']);
-            $legacyFieldWizardHtml = implode(LF, $legacyWizards['fieldWizard']);
-
             $fieldControlResult = $this->renderFieldControl();
-            $fieldControlHtml = $legacyFieldControlHtml . $fieldControlResult['html'];
+            $fieldControlHtml =  $fieldControlResult['html'];
             $this->resultArray = $this->mergeChildReturnIntoExistingResult($this->resultArray, $fieldControlResult, false);
 
             $fieldWizardResult = $this->renderFieldWizard();
-            $fieldWizardHtml = $legacyFieldWizardHtml . $fieldWizardResult['html'];
+            $fieldWizardHtml = $fieldWizardResult['html'];
             $this->resultArray = $this->mergeChildReturnIntoExistingResult($this->resultArray, $fieldWizardResult, false);
 
             $result[] = '<div class="formengine-field-item t3js-formengine-field-item">';
