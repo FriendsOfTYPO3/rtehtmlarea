@@ -22,7 +22,6 @@ use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Localization\Locales;
 use TYPO3\CMS\Core\Localization\LocalizationFactory;
 use TYPO3\CMS\Core\Utility\ArrayUtility;
-use TYPO3\CMS\Core\Utility\ClientUtility;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\PathUtility;
@@ -72,13 +71,6 @@ class RichTextElement extends AbstractFormElement
      * @var string
      */
     protected $domIdentifier;
-
-    /**
-     * Some client info containing "user agent", "browser", "version", "system"
-     *
-     * @var array
-     */
-    protected $client;
 
     /**
      * Selected language
@@ -225,7 +217,6 @@ class RichTextElement extends AbstractFormElement
         BackendUtility::fixVersioningPid($table, $row);
         $this->pidOfVersionedMotherRecord = (int)$row['pid'];
         $this->processedRteConfiguration = $parameterArray['fieldConf']['config']['richtextConfiguration'];
-        $this->client = $this->clientInfo();
         $this->domIdentifier = preg_replace('/[^a-zA-Z0-9_:.-]/', '_', $parameterArray['itemFormElName']);
         $this->domIdentifier = htmlspecialchars(preg_replace('/^[^a-zA-Z]/', 'x', $this->domIdentifier));
 
@@ -295,9 +286,7 @@ class RichTextElement extends AbstractFormElement
             $widthOverride = isset($backendUser->uc['rteWidth']) && trim($backendUser->uc['rteWidth']) ? trim($backendUser->uc['rteWidth']) : trim($this->processedRteConfiguration['RTEWidthOverride']);
             if ($widthOverride) {
                 if (strstr($widthOverride, '%')) {
-                    if ($this->client['browser'] !== 'msie') {
-                        $width = (int)$widthOverride > 0 ? (int)$widthOverride : '100%';
-                    }
+                    $width = (int)$widthOverride > 0 ? (int)$widthOverride : '100%';
                 } else {
                     $width = (int)$widthOverride > 0 ? (int)$widthOverride : $width;
                 }
@@ -390,7 +379,6 @@ class RichTextElement extends AbstractFormElement
                         'contentTypo3Language' => $this->contentTypo3Language,
                         'contentISOLanguage' => $this->contentISOLanguage,
                         'contentLanguageUid' => $this->contentLanguageUid,
-                        'client' => $this->client,
                         'thisConfig' => $this->processedRteConfiguration,
                     ];
                     if ($plugin->main($configuration)) {
@@ -1098,29 +1086,6 @@ class RichTextElement extends AbstractFormElement
         $onSubmitCode[] =    'OK = 0;';
         $onSubmitCode[] = '};';
         $this->resultArray['additionalJavaScriptSubmit'][] = implode(LF, $onSubmitCode);
-    }
-
-    /**
-     * Client Browser Information
-     *
-     * @return array Contains keys "user agent", "browser", "version", "system"
-     */
-    protected function clientInfo()
-    {
-        $userAgent = GeneralUtility::getIndpEnv('HTTP_USER_AGENT');
-        $browserInfo = ClientUtility::getBrowserInfo($userAgent);
-        // Known engines: order is not irrelevant!
-        $knownEngines = ['opera', 'msie', 'gecko', 'webkit'];
-        if (is_array($browserInfo['all'])) {
-            foreach ($knownEngines as $engine) {
-                if ($browserInfo['all'][$engine]) {
-                    $browserInfo['browser'] = $engine;
-                    $browserInfo['version'] = ClientUtility::getVersion($browserInfo['all'][$engine]);
-                    break;
-                }
-            }
-        }
-        return $browserInfo;
     }
 
     /**
