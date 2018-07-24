@@ -102,7 +102,6 @@ class ImageRenderingController extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin
                     $this->getLogger()->error($message);
                 }
             }
-
         }
 
         return '<img ' . GeneralUtility::implodeAttributes($imageAttributes, true, true) . ' />';
