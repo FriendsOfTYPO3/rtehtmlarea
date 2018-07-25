@@ -17,6 +17,7 @@ namespace TYPO3\CMS\Rtehtmlarea\Controller;
 use TYPO3\CMS\Core\Resource;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Service\ImageService;
+use TYPO3\CMS\Extbase\Object\ObjectManager;
 
 /**
  * Render the image attributes and reconstruct magic images, if necessary (and possible)
@@ -77,7 +78,8 @@ class ImageRenderingController extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin
             if ($fileUid) {
                 try {
                     $file = Resource\ResourceFactory::getInstance()->getFileObject($fileUid);
-                    $imageService = new ImageService();
+                    $objectManager = GeneralUtility::makeInstance(ObjectManager::class);
+                    $imageService = $objectManager->get(ImageService::class);
                     if ($imageAttributes['src'] !== $file->getPublicUrl()) {
                         // Source file is a processed image
                         $imageConfiguration = [
