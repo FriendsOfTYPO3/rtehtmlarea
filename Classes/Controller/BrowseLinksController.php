@@ -605,7 +605,8 @@ class BrowseLinksController extends AbstractLinkBrowserController
             'act' => isset($overrides['act']) ? $overrides['act'] : $this->displayedLinkHandlerId,
             'bparams' => $this->bparams,
             'editorNo' => $this->editorNo,
-            'contentTypo3Language' => $this->contentTypo3Language
+            'contentTypo3Language' => $this->contentTypo3Language,
+            'id' => $this->getCurrentPageId()
         ];
     }
 }
