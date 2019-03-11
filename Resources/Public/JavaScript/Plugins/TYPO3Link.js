@@ -183,6 +183,7 @@ define(['TYPO3/CMS/Rtehtmlarea/HTMLArea/Plugin/Plugin',
 			if (!node) {
 				node = this.editor.getSelection().getParentElement();
 			}
+			// external-link, external-link-new-window, ...
 			if (HTMLArea.classesAnchorSetup && cur_class) {
 				for (var i = HTMLArea.classesAnchorSetup.length; --i >= 0;) {
 					anchorClass = HTMLArea.classesAnchorSetup[i];
