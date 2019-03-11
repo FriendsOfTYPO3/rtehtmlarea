@@ -533,6 +533,17 @@ define(['TYPO3/CMS/Rtehtmlarea/HTMLArea/UserAgent/UserAgent',
 				'click',
 				function (event) { return self.onMouse(event); }
 			);
+			// IE & Edge are selecting "a bit too much" when double clicking a node
+			if (UserAgent.isEdge || UserAgent.isIE) {
+				// explicitly using double click instead of selectstart
+				Event.on(
+					this.document.documentElement,
+					'dblclick',
+					function (event) {
+						self.getEditor().getSelection().removeTrailingSpaces();
+					}
+				);
+			}
 			if (UserAgent.isGecko) {
 				Event.on(
 					this.document.documentElement,
