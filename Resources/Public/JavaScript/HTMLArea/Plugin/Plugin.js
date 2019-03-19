@@ -438,6 +438,8 @@ define([
 			var $iframe = $('<iframe />', {src: url, 'class': 'content-iframe', style: 'display: block; border: 0; width: 100%; max-height: 100%; height: ' + height * 1 + 'px;'}),
 				$content = $('<div />', {'class': 'htmlarea-window', id: this.editor.editorId + buttonId}).append($iframe);
 
+			// explicitly save selection before opening modal
+			this.saveSelection();
 			this.dialog = Modal.show(this.localize(title) || title, $content, Severity.notice);
 
 			// TODO: dirty CSS hack - provide an API instead?
@@ -537,8 +539,8 @@ define([
 		 * Should be called after processing button other than Cancel
 		 */
 		saveSelection: function () {
-			// If IE, save the current selection
-			if (UserAgent.isIE) {
+			// If IE or Edge, save the current selection
+			if (UserAgent.isIE || UserAgent.isEdge) {
 				this.savedRange = this.editor.getSelection().createRange();
 			}
 		},
@@ -548,8 +550,8 @@ define([
 		 * Should be called before processing dialogue button or result
 		 */
 		restoreSelection: function () {
-			// If IE, restore the selection saved when the window was shown
-			if (UserAgent.isIE && this.savedRange) {
+			// If IE or Edge, restore the selection saved when the window was shown
+			if ((UserAgent.isIE || UserAgent.isEdge) && this.savedRange) {
 					// Restoring the selection will not work if the inner html was replaced by the plugin
 				try {
 					this.editor.getSelection().selectRange(this.savedRange);

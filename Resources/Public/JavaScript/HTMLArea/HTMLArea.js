@@ -122,5 +122,6 @@ define(['TYPO3/CMS/Rtehtmlarea/HTMLArea/UserAgent/UserAgent',
 			}
 		};
 
+		window.HTMLArea = window.HTMLArea || {};
 		return Util.apply(HTMLArea, HtmlArea);
 });

@@ -957,6 +957,35 @@ define(['TYPO3/CMS/Rtehtmlarea/HTMLArea/UserAgent/UserAgent',
 		return true;
 	};
 
+    /**
+     * Removes trailing spaces at end of selection. IE & Edge are selecting
+     * "a bit too much" when double clicking a node. This solution was inspired
+     * by code on StackOverflow (see below).
+     *
+     * @see https://stackoverflow.com/a/54161466/2854140
+     */
+	Selection.prototype.removeTrailingSpaces = function() {
+        if (this.isEmpty()) {
+            return;
+        }
+
+        var selection = this.selection;
+        var range = this.createRange();
+        var content = range.toString();
+
+        if (!/\s+$/.test(content)) {
+            return;
+        }
+
+        if (selection.focusOffset > selection.anchorOffset) {
+            range.setEnd(selection.focusNode, selection.focusOffset - 1);
+        } else {
+            range.setEnd(selection.anchorNode, selection.anchorOffset - 1);
+        }
+
+        this.selectRange(range);
+    };
+
 	return Selection;
 
 });
