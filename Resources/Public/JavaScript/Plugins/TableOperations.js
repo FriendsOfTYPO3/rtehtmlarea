@@ -1459,7 +1459,7 @@ define([
 		 * @param {Object} params The field values entered in the form
 		 */
 		setHeaders: function (table, params) {
-			var headers = params.f_headers;
+			var headers = params.typeof;
 			var doc = this.editor.document;
 			var tbody = table.tBodies[0];
 			var thead = table.tHead;
