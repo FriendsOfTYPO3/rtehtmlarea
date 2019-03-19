@@ -214,7 +214,7 @@ define(['TYPO3/CMS/Rtehtmlarea/HTMLArea/UserAgent/UserAgent',
 						id: this.editorId + '-iframe',
 						tag: 'iframe',
 						cls: 'editorIframe',
-						src: UserAgent.isGecko ? 'javascript:void(0);' : (UserAgent.isWebKit ? 'about:blank;' : HTMLArea.editorUrl + 'Resources/Public/Html/blank.html')
+						src: UserAgent.isGecko ? 'javascript:void(0);' : (UserAgent.isWebKit ? (UserAgent.isChrome ? 'about:blank;' : 'javascript: \'' + Util.htmlEncode(this.config.documentType + this.config.blankDocument) + '\'' ): HTMLArea.editorUrl + 'Resources/Public/Html/blank.html')
 					},
 					isNested: this.isNested,
 					nestedParentElements: this.nestedParentElements,
