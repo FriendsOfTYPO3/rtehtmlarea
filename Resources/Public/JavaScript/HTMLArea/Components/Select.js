@@ -48,6 +48,9 @@ define([
 			if (this.id) {
 				this.selectElement.setAttribute('id', this.id);
 			}
+			if (this.name) {
+				this.selectElement.setAttribute('name', this.name);
+			}
 			if (typeof this.cls === 'string') {
 				Dom.addClass(this.selectElement, this.cls);
 			}

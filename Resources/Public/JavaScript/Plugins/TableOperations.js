@@ -1824,6 +1824,7 @@ define([
 				{
 					xtype: 'htmlareaselect',
 					itemId: fieldName,
+					name: fieldName,
 					fieldLabel: this.getHelpTip(fieldTitle, fieldLabel),
 					helpTitle: typeof TYPO3.ContextHelp !== 'undefined' ? '' : this.localize(fieldTitle),
 					width: (this.properties['style'] && this.properties['style'].width) ? this.properties['style'].width : 300
