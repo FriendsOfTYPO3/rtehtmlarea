@@ -7,9 +7,6 @@
 	"require": {
 		"typo3/cms-core": "*"
 	},
-	"replace": {
-		"rtehtmlarea": "*"
-	},
 	"suggest": {
 		"typo3/cms-setup": "*"
 	},
