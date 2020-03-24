@@ -226,7 +226,7 @@ define([
 			var iframePosition = Dom.getPosition(this.editor.iframe.getEl());
 			$('#contentMenu1').css({
 				left: iframePosition.x + this.mousePosition.x + 'px',
-				top: document.body.scrollTop + iframePosition.y + this.mousePosition.y + 'px'
+				top: iframePosition.y + this.mousePosition.y - $('.module-body').scrollTop() - this.editor.iframe.document.body.scrollTop + 'px'
 			}).show();
 		},
 
