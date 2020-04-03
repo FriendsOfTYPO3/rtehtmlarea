@@ -95,7 +95,11 @@ define(['jquery', 'TYPO3/CMS/Recordlist/LinkBrowser'], function($, LinkBrowser) 
 		delete attributes.class;
 		delete attributes.target;
 		delete attributes.params;
-
+	
+	if (parseInt(input) == input) {
+            input = 't3://page?uid=' + input;
+        }
+		
         RteLinkBrowser.plugin.createLink(
 			input + curParams,
 			curTarget,
