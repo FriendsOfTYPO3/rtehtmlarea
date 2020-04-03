@@ -106,10 +106,3 @@ Mertes <mailto:info@typo3saar.de?subject=EXT:%20htmlArea%20RTE>`_ ,
 <mailto:info@unlimited-vision.net?subject=EXT:%20htmlArea%20RTE>`_ ,
 `Jan Wischnat <http://www.wischnat.de/>`_ , Christian Oettinger, Peter
 Kraume, Sven Wolfermann.
-
-You may sponsor further development of this extension by sending your
-contribution tostanislas.rolland(at)sjbr.cathrough `moneybookers.com
-<http://www.moneybookers.com/>`_ or `PayPal
-<https://www.paypal.com/>`_ , or by contacting the `author
-<mailto:typo3@sjbr.ca?subject=Sponsoring%20htmlArea%20RTE>`_ .
-
