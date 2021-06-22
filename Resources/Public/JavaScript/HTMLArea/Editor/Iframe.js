@@ -199,7 +199,7 @@ define(['TYPO3/CMS/Rtehtmlarea/HTMLArea/UserAgent/UserAgent',
 					self.initializeIframe();
 				}, 50);
 			// WebKit
-			} else if (UserAgent.isWebKit && (!iframe.contentDocument.documentElement || !iframe.contentDocument.body)) {
+			} else if (UserAgent.isWebKit && (!iframe.contentDocument || !iframe.contentDocument.documentElement || !iframe.contentDocument.body)) {
 				window.setTimeout(function () {
 					self.initializeIframe();
 				}, 50);
