@@ -77,21 +77,6 @@ The hook on the Lorem Ipsum wizard requires version 1.1.0+ of the
 Lorem Ipsum extension (lorem\_ipsum).
 
 
-.. _support:
-
-Support
--------
-
-Please see/report problems on TYPO3 Forge
-`http://forge.typo3.org/projects/typo3v4-core/issues
-<http://forge.typo3.org/projects/typo3v4-core/issues>`_ under category
-rtehtmlarea.
-
-You may get support in the use of this extension by subscribing to
-`http://forum.typo3.org/index.php/f/50/
-<http://forum.typo3.org/index.php/f/50/>`_ .
-
-
 .. _what-s-new:
 
 What's new
