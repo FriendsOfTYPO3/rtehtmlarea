@@ -34,7 +34,7 @@ installed on the server.
 
 Custom elements presented by the User Elements feature may be
 maintained with extension `Custom Tags
-<http://typo3.org/extensions/repository/search/de_custom_tags/>`_
+<https://extensions.typo3.org/extension/de_custom_tags>`_
 (extension key: de\_custom\_tags).
 
 Upon installation directory uploads/tx\_rtehtmlarea will be created.
