@@ -1,9 +1,4 @@
-﻿.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
-.. include:: ../Includes.txt
+﻿.. include:: /Includes.rst.txt
 
 
 
@@ -27,6 +22,9 @@ features:
 
 - Integration of TYPO3 image insertion and link insertion browsers,
   configurable color selector and user element insertion dialog;
+
+- Integration of Magic Images within text is built-in and tightly couple
+  to TYPO3's APIs, and works just fine with HtmlArea.
 
 - Configuration through TYPO3 Extension Manager, Page and User TSconfig
   RTE properties; three default sets of Page and User TSconfig
@@ -79,21 +77,6 @@ The hook on the Lorem Ipsum wizard requires version 1.1.0+ of the
 Lorem Ipsum extension (lorem\_ipsum).
 
 
-.. _support:
-
-Support
--------
-
-Please see/report problems on TYPO3 Forge
-`http://forge.typo3.org/projects/typo3v4-core/issues
-<http://forge.typo3.org/projects/typo3v4-core/issues>`_ under category
-rtehtmlarea.
-
-You may get support in the use of this extension by subscribing to
-`http://forum.typo3.org/index.php/f/50/
-<http://forum.typo3.org/index.php/f/50/>`_ .
-
-
 .. _what-s-new:
 
 What's new
@@ -115,3 +98,26 @@ The following features have been added in TYPO3 6.0:
 - Page TSconfig properties that were deprecated since TYPO3 4.6 are now
   removed.
 
+
+.. _migration-to-ckeditor:
+
+Migration to CKEditor
+---------------------
+
+There are various plugins that are solely implemented by HtmlArea, and have
+been there for years, if you've used these plugins, there is no equivalent.
+
+Although CKEditor has a plugin system as well, the one built by HTMLarea
+integrates tightly in TYPO3's PHP world. Migrating the same functionality in
+any other RTE can be tough.
+
+
+.. _current-state:
+
+Current state
+-------------
+
+The latest version here reflects a feature-complete state. There are bugs, we
+know, there are possible feature requests - we know. But it's highly likely that
+this extension gets no new features, unless somebody steps up and continues the
+development (see the :ref:`contribution` page).

@@ -1,4 +1,4 @@
-﻿.. include:: ../../../Includes.txt
+﻿.. include:: /Includes.rst.txt
 .. highlight:: typoscript
 
 
@@ -1340,7 +1340,8 @@ buttons.image.options.imageHandler
          entry to this array.
          The syntax is:
 
-         .. code:: ts
+         .. code:: typoscript
+
             <handler-id> {
                handler = Vendor\Ext\YourHandlerClass::class
                label = LLL:EXT:ext/Resources/Private/Language/locallang.xlf:the_label
@@ -2509,7 +2510,7 @@ proc
          Customization of the server processing of the content - also called
          'transformations'.
 
-         See :ref:`t3api:transformations`
+         See :ref:`t3coreapi:transformations`
 
 
 

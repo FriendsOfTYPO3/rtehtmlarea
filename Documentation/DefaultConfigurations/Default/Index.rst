@@ -1,9 +1,4 @@
-﻿.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
-.. include:: ../../Includes.txt
+﻿.. include:: /Includes.rst.txt
 
 
 
@@ -16,10 +11,10 @@ This default configuration establishes default settings in Page
 TSconfig for RTE content transformation.
 
 For documentation of RTE tranformations, see:
-:ref:`RTE tranformations <t3api:transformations>`
+:ref:`RTE tranformations <t3coreapi:transformations>`
 
 For documentation of Page TSconfig configuration of RTE processing, see:
-:ref:`RTE tranformations Page TSconfig <t3api:transformations-tsconfig>`
+:ref:`RTE tranformations Page TSconfig <t3coreapi:transformations-tsconfig>`
 
 For documentation of the HTMLparser, see:
 :ref:`TypoScript HTMLparser <t3tsref:htmlparser>`

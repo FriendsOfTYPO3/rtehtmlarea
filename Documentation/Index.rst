@@ -1,59 +1,47 @@
-﻿.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
-.. include:: Includes.txt
-
-
-.. _start:
+﻿.. include:: /Includes.rst.txt
 
 ============
-htmlArea RTE
+HtmlArea RTE
 ============
 
 :Extension key:
-      rtehtmlarea
+   rtehtmlarea
+
+:Package name:
+   friendsoftypo3/rtehtmlarea
 
 :Version:
-      |release|
+   |release|
 
 :Language:
-      en
-
-:Description:
-      Rich-text editor for TYPO3 CMS.
-
-:Keywords:
-      rte, rich text editor
-
-:Copyright:
-      2000-2014
+   en
 
 :Author:
-      TYPO3 CMS Core Development Team
+   Stanislas Rolland & Contributors
 
 :License:
-      Open Content License available from `www.opencontent.org/opl.shtml
-      <http://www.opencontent.org/opl.shtml>`_
+   This document is published under the
+   `Open Content License <https://www.openhub.net/licenses/opl>`__.
 
 :Rendered:
-      |today|
+   |today|
 
-The content of this document is related to TYPO3,
+----
 
-a GNU/GPL CMS/Framework available from `www.typo3.org
-<http://www.typo3.org/>`_
+This extension provides a highly configurable rich text editor based on HtmlArea
+for TYPO3 v8.
 
+It was part of TYPO3 Core until 2017, where it was replaced by the CKeditor
+(see `rte_ckeditor <https://extensions.typo3.org/extension/rte_ckeditor>`__
+extension), which has been the new standard since then.
 
+----
 
-
-**Table of Contents**
+**Table of Contents:**
 
 .. toctree::
-   :maxdepth: 5
+   :maxdepth: 2
    :titlesonly:
-   :glob:
 
    Copyright/Index
    Introduction/Index
@@ -62,5 +50,12 @@ a GNU/GPL CMS/Framework available from `www.typo3.org
    Configuration/Index
    DefaultConfigurations/Index
    Troubleshooting/Index
-   Targets
+   Contribution/Index
 
+.. Meta Menu
+
+.. toctree::
+   :hidden:
+
+   Sitemap
+   genindex

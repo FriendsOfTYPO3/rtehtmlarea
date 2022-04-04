@@ -1,9 +1,4 @@
-﻿.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
-.. include:: ../../Includes.txt
+﻿.. include:: /Includes.rst.txt
 
 
 
@@ -31,7 +26,7 @@ Add the following lines to your Apache httpd.conf file or in the
    BrowserMatch "Mozilla/4.[0-9]{2}" brokenvary=1
    BrowserMatch "Opera" !brokenvary
    SetEnvIf brokenvary 1 force-no-vary
-   
+
    ExpiresActive On
    ExpiresByType image/gif "access plus 1 month"
    ExpiresByType image/png "access plus 1 month"
