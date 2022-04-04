@@ -10,7 +10,20 @@
 .. _installation:
 
 Installing the RTE
-------------------
+==================
+
+The latest version can be installed via `TER`_ or via composer by running
+
+.. code-block:: bash
+
+   composer require friendsoftypo3/rtehtmlarea
+
+in a TYPO3 v8 installation.
+
+.. _TER: https://extensions.typo3.org/extension/rtehtmlarea
+
+Installing the extension prior to TYPO3 v8
+------------------------------------------
 
 The extension is a system extension and is installed by default when
 TYPO3 is installed.

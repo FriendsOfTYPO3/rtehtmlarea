@@ -2509,7 +2509,7 @@ proc
          Customization of the server processing of the content - also called
          'transformations'.
 
-         See :ref:`t3api:transformations`
+         See :ref:`t3coreapi:transformations`
 
 
 
