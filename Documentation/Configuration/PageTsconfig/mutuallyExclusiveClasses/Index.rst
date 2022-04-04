@@ -3,7 +3,7 @@
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. include:: ../../../Includes.txt
+.. include:: /Includes.rst.txt
 
 
 .. _mutuallyexclusiveclasses:
@@ -23,10 +23,10 @@ mutuallyExclusiveClasses.[ *label* ]
 
    Property
          mutuallyExclusiveClasses.[ *label* ]
-   
+
    Data type
          list of id-strings
-   
+
    Description
          Defines a set of classes that are mutually exclusive An element may
          have only one of the listed classes assigned to it at any given time.

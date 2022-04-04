@@ -3,7 +3,7 @@
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. include:: ../../../Includes.txt
+.. include:: /Includes.rst.txt
 
 
 .. _fontsizes:
@@ -23,21 +23,21 @@ fontSizes.[ *id-string* ]
 
    Property
          fontSizes.[ *id-string* ]
-   
+
    Description
          Defines the font sizes available in the RTE.
-         
+
          Properties:
-         
+
          ::
-         
+
             .name = Label of the font size in menu (may be a reference to an entry in a localization file of the form LLL:EXT:[fileref]:[labelkey])
             .value = The font size value
-         
+
          Example:
-         
+
          ::
-         
+
             # General configuration of the available font sizes:
             RTE.fontSizes {
               size1 {

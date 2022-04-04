@@ -3,7 +3,7 @@
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. include:: ../../../Includes.txt
+.. include:: /Includes.rst.txt
 
 
 .. _fonts:
@@ -23,21 +23,21 @@ fonts.[ *id-string* ]
 
    Property
          fonts.[ *id-string* ]
-   
+
    Description
          Defines the fonts available in the RTE.
-         
+
          Properties:
-         
+
          ::
-         
+
             .name = Label of the font in menu (may be a reference to an entry in a localization file of the form LLL:EXT:[fileref]:[labelkey])
             .value = The font face value (comma-separated list of font-family names; if a font-family name contains spaces, it should be quoted with single quotes)
-         
+
          Example:
-         
+
          ::
-         
+
             # General configuration of the available fonts:
             RTE.fonts {
               face1 {
@@ -50,7 +50,7 @@ fonts.[ *id-string* ]
               }
               noFace {
                 name = No font
-                value = 
+                value =
               }
             }
             # Specific setting for the fontstyle selector:
