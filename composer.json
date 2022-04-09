@@ -2,7 +2,12 @@
 	"name": "friendsoftypo3/rtehtmlarea",
 	"type": "typo3-cms-extension",
 	"description": "Highly configurable RTE based on HtmlArea for TYPO3 v8.",
-	"homepage": "https://github.com/FriendsOfTYPO3/rtehtmlarea",
+	"homepage": "https://extensions.typo3.org/extension/rtehtmlarea",
+	"support": {
+		"docs": "https://docs.typo3.org/p/friendsoftypo3/rtehtmlarea/main/en-us/",
+		"issues": "https://github.com/FriendsOfTYPO3/rtehtmlarea/issues",
+		"source": "https://github.com/FriendsOfTYPO3/rtehtmlarea"
+	},
 	"license": ["GPL-2.0-or-later"],
 	"require": {
 		"typo3/cms-core": "*"
