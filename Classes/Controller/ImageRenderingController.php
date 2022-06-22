@@ -16,6 +16,8 @@ namespace TYPO3\CMS\Rtehtmlarea\Controller;
 
 use TYPO3\CMS\Core\Resource;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Service\ImageService;
+use TYPO3\CMS\Extbase\Object\ObjectManager;
 
 /**
  * Render the image attributes and reconstruct magic images, if necessary (and possible)
@@ -76,6 +78,8 @@ class ImageRenderingController extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin
             if ($fileUid) {
                 try {
                     $file = Resource\ResourceFactory::getInstance()->getFileObject($fileUid);
+                    $objectManager = GeneralUtility::makeInstance(ObjectManager::class);
+                    $imageService = $objectManager->get(ImageService::class);
                     if ($imageAttributes['src'] !== $file->getPublicUrl()) {
                         // Source file is a processed image
                         $imageConfiguration = [
@@ -84,13 +88,15 @@ class ImageRenderingController extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin
                         ];
                         $processedFile = $this->getMagicImageService()->createMagicImage($file, $imageConfiguration);
                         $additionalAttributes = [
-                            'src' => $processedFile->getPublicUrl(),
+                            'src' => $imageService->getImageUri($processedFile),
                             'title' => $imageAttributes['title'] ?: $file->getProperty('title'),
                             'alt' => $imageAttributes['alt'] ?: $file->getProperty('alternative'),
                             'width' => $processedFile->getProperty('width'),
                             'height' => $processedFile->getProperty('height'),
                         ];
                         $imageAttributes = array_merge($imageAttributes, $additionalAttributes);
+                    } else {
+                        $imageAttributes['src'] = $imageService->getImageUri($file);
                     }
                 } catch (Resource\Exception\FileDoesNotExistException $fileDoesNotExistException) {
                     // Log the fact the file could not be retrieved.
@@ -99,6 +105,7 @@ class ImageRenderingController extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin
                 }
             }
         }
+
         return '<img ' . GeneralUtility::implodeAttributes($imageAttributes, true, true) . ' />';
     }
 
